@@ -1,0 +1,92 @@
+初始化一个目录作为仓库
+git init 
+
+添加到暂存区
+git add
+
+提交
+git commit -m "" //-m 注释说明
+
+查看版本日志记录，并可以看到指针指向哪个版本
+git reflog
+
+切换版本
+git reset --hard  版本号 
+
+撤销操作
+git restore -- file
+
+删除
+rm file 	删除工作区的文件
+再commit（不太对） 删除提交的版本
+
+
+SSH
+远程主机存公钥，本机存私钥。被别人连接的存公钥
+
+$ ssh-keygen生成公钥和私钥
+id_rsa.pub和id_rsa。前者是你的公钥，后者是你的私钥。
+
+将公钥传送到远程主机host上面：
+$ ssh-copy-id user@host
+
+
+查看分支：git branch
+
+创建分支：git branch name
+
+切换分支：git checkout name
+
+创建+切换分支：git checkout –b name
+
+合并某分支到当前分支：git merge name
+
+删除分支：git branch –d name
+
+
+
+本地新建一个文件夹，然后git init
+然后git remote add name url与远程仓库建立连接   			git remote -v
+git pull name master/dev 拉取远程master/分支代码
+本地创建一个本地分支 git checkout -b dev
+然后修改代码  git add . 然后git commit -m “”
+然后切换到本地master分支   git checkout master
+然后git merge dev
+then  git push orign master:dev
+
+
+git clone url之后就和orign建立连接
+git branch -r 查看远程分支
+git checkout name	切换到远程分支
+git pull 拉取当前分支的代码
+git merge name 把name分支的代码合并到当前分支
+git push 推送到当前分支
+
+
+当本地文件夹有代码，有远程仓库，但是远程仓库没代码时
+进入到本地代码文件夹 然后 git init 初始化本地仓库
+然后git remote origin 远程仓库地址————与远程仓库建立连接
+然后git add . 添加所有文件到暂存区
+git commit -m “”提交暂存区的文件并作说明
+git push origin master:main  master是本地分支的名字 main是远程主分支的名字
+
+
+如果远程仓库有代码，本地仓库没代码
+git pull 远程仓库
+然后
+git checkout -b zzd 创建并切换到zzd分支
+然后修改完代码后
+git add .
+git commit -m “”
+git push origin zzd 把zzd分支代码推送到远程仓库
+
+当你在 zzd 分支下进行 git merge origin/main 操作时，main 分支的更改将会合并到 zzd 分支。
+git merge origin/main 这样 main 分支的最新代码会被合并到 zzd 分支
+git push origin zzd
+
+当你在 main 分支下进行 git merge zzd 操作时，zzd 分支的更改将会合并到 main 分支。
+git merge zzd 这样 zzd 分支的代码会被合并到 main 分支。
+git push origin main
+
+
+
