@@ -6,6 +6,7 @@ import scala.io.Source
 
 //最終版 就用這個，這個失敗會重試，並且程序不會中斷。
 //666
+//999
 object MovieLookupTest {
   val apiKey = "f3f756b9be4ad6dadd56d58a3bba074a" // ⚠️ 替换为你的 TMDb Key
   val imageBase = "https://image.tmdb.org/t/p/original"
